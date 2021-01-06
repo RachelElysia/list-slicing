@@ -15,8 +15,10 @@ def custom_len(input_list):
         8
 
     """
-
-    return 0
+    counter = 0
+    for note in input_list:
+        counter += 1
+    return counter
 
 
 # For the next four exercises, you'll need to be clever and think about ways
@@ -44,7 +46,7 @@ def custom_append(input_list, value):
 
     """
 
-    pass
+    input_list[index:index] = [value]
 
 
 def custom_extend(input_list, second_list):
@@ -63,8 +65,8 @@ def custom_extend(input_list, second_list):
 
     """
 
-    pass
-
+    for item in second_list:
+        input_list[-1:] = [input_list[-1], item]
 
 def custom_insert(input_list, index, value):
     """Insert value at index in the list.
@@ -80,8 +82,24 @@ def custom_insert(input_list, index, value):
         True
 
     """
+    
+    
+    # value + the items onto it
+    new_list = [value]
+    # slice input list after index add to new list
 
-    pass
+    for item in input_list[value:]:
+        new_list = [new_list, item]
+    
+    
+
+    # append that onto the original list starting at the correct index
+    #if anything extra delete it?
+
+
+    # start = input_list[:index]
+    # end = input_list[index:]
+    # input_list = [start, value, end]
 
 
 def custom_remove(input_list, value):
